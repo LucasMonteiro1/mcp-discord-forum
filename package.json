@@ -1,0 +1,40 @@
+{
+  "name": "mcp-discord-forum",
+  "version": "1.0.0",
+  "description": "MCP server for posting and managing topics in Discord forum channels",
+  "keywords": [
+    "mcp",
+    "discord",
+    "forum",
+    "modelcontextprotocol"
+  ],
+  "author": "LucasMonteiro1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "bin": {
+    "mcp-discord-forum": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node18 --outfile=dist/index.js --banner:js='#!/usr/bin/env node'",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.28.0",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasMonteiro1/mcp-discord-forum.git"
+  }
+}
