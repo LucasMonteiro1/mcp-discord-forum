@@ -44,27 +44,27 @@ Add to your MCP client config (e.g. `~/.kiro/settings/mcp.json`):
 1. Go to [discord.com/developers/applications](https://discord.com/developers/applications)
 2. Click **New Application**, give it a name and confirm
 3. In the sidebar, click **Bot**
-4. Click **Reset Token** → copy the generated token (use it as `DISCORD_BOT_TOKEN`)
+4. Click **Reset Token** → copy the generated token (use it as `DISCORD_BOT_TOKEN`)  
 
-**Enable intents:**
-5. On the same **Bot** page, scroll to **Privileged Gateway Intents**
-6. Enable **Message Content Intent**
+**Enable intents:**  
+5. On the same **Bot** page, scroll to **Privileged Gateway Intents**  
+6. Enable **Message Content Intent**  
 7. Save changes
 
-**Invite the bot to your server:**
-8. In the sidebar, click **OAuth2 → URL Generator**
-9. Under **Scopes**, check: `bot`
-10. Under **Bot Permissions**, check:
-    - `View Channels`
-    - `Send Messages`
-    - `Send Messages in Threads`
-    - `Create Public Threads`
-    - `Read Message History`
-11. Copy the generated URL at the bottom, open it in the browser and select your server
+**Invite the bot to your server:**  
+8. In the sidebar, click **OAuth2 → URL Generator**  
+9. Under **Scopes**, check: `bot`  
+10. Under **Bot Permissions**, check:  
+    - `View Channels`  
+    - `Send Messages`  
+    - `Send Messages in Threads`  
+    - `Create Public Threads`  
+    - `Read Message History`  
+11. Copy the generated URL at the bottom, open it in the browser and select your server  
 
-**Grant access to the forum channel:**
-12. In Discord, right-click the forum channel → **Edit Channel → Permissions**
-13. Add the bot and make sure the permissions above are allowed
+**Grant access to the forum channel:**  
+12. In Discord, right-click the forum channel → **Edit Channel → Permissions**  
+13. Add the bot and make sure the permissions above are allowed  
 
 ## Finding Channel IDs
 
