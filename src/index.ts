@@ -150,6 +150,27 @@ server.tool(
   },
 );
 
+server.tool(
+  'edit_forum_post',
+  'Edit the title of an existing forum post (thread)',
+  {
+    thread_id: z.string().describe('ID of the forum post thread to edit'),
+    title: z.string().describe('New title for the forum post'),
+  },
+  async ({ thread_id, title }) => {
+    const result = await discordRequest(`/channels/${thread_id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ name: title }),
+    });
+
+    return ok({
+      id: result.id,
+      name: result.name,
+      url: `https://discord.com/channels/${result.guild_id}/${result.id}`,
+    });
+  },
+);
+
 // ─── Start ────────────────────────────────────────────────────────────────────
 
 async function main() {
