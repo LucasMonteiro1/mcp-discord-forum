@@ -171,6 +171,37 @@ server.tool(
   },
 );
 
+server.tool(
+  'delete_forum_post',
+  'Delete a forum post (thread) permanently. This also deletes all messages in it.',
+  {
+    thread_id: z.string().describe('ID of the forum post thread to delete'),
+  },
+  async ({ thread_id }) => {
+    await discordRequest(`/channels/${thread_id}`, {
+      method: 'DELETE',
+    });
+
+    return ok({ deleted: true, id: thread_id });
+  },
+);
+
+server.tool(
+  'delete_forum_post_message',
+  'Delete a single message inside a forum post thread',
+  {
+    thread_id: z.string().describe('ID of the forum post thread containing the message'),
+    message_id: z.string().describe('ID of the message to delete'),
+  },
+  async ({ thread_id, message_id }) => {
+    await discordRequest(`/channels/${thread_id}/messages/${message_id}`, {
+      method: 'DELETE',
+    });
+
+    return ok({ deleted: true, id: message_id });
+  },
+);
+
 // ─── Start ────────────────────────────────────────────────────────────────────
 
 async function main() {
