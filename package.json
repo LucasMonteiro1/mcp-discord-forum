@@ -1,6 +1,6 @@
 {
   "name": "mcp-discord-forum",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "MCP server for posting and managing topics in Discord forum channels",
   "keywords": [
     "mcp",
